@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0f0e">
   <meta name="description" content="Discover The Rebel of Machrinath, a debut speculative sci-fi / YA fantasy novel by Ben Noble. On a world where living metal grows in the wild, one spark changes everything.">
-  <title>The Rebel of Machrinath | Ben Noble</title>
+  <title>BDNoble Books</title>
+  <link rel="stylesheet" href="https://assets.mlcdn.com/fonts.css?version=1792672">
   <style>
     :root {
       color-scheme: dark;
@@ -51,6 +52,8 @@
     .nav-links a { padding-block: 10px; text-decoration: none; font-size: 12px; color: var(--muted); }
     .nav-links a:hover { color: var(--text); }
     .nav-links .nav-alert { border: 1px solid var(--line); padding: 9px 16px; color: var(--text); }
+    .announcement { background: #254124; color: var(--text); border-bottom: 1px solid #e1b98966; padding-block: 12px; text-align: center; font-size: 14px; line-height: 1.6; }
+    .announcement p { white-space: pre-line; overflow-wrap: anywhere; }
     .hero { position: relative; overflow: hidden; min-height: min(850px, 90svh); display: flex; flex-direction: column; justify-content: space-between; }
     .hero-grid { display: grid; grid-template-columns: 1.18fr 1fr; gap: 72px; align-items: end; padding-block: 100px 110px; flex: 1; }
     .hero-copy { position: relative; z-index: 1; }
@@ -61,6 +64,7 @@
     h1 .title-small { font-size: .53em; line-height: 1.45; letter-spacing: -.025em; }
     h1 .title-last { color: #bed4c5; font-style: italic; }
     .hero-byline { margin-top: 24px; color: var(--muted); font-size: 11px; letter-spacing: .17em; text-transform: uppercase; }
+    .release-window { margin-top: 12px; color: var(--copper); font-size: 13px; font-weight: 600; letter-spacing: .06em; }
     .hero-pitch { max-width: 440px; margin-top: 28px; color: var(--muted); font-size: 17px; line-height: 1.8; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
     .button { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 49px; padding: 12px 21px; border: 1px solid var(--jade); background: var(--jade); color: #071e15; font-size: 12px; font-weight: 650; text-decoration: none; cursor: pointer; transition: background .18s, border-color .18s; }
@@ -78,6 +82,7 @@
     h2 { margin-top: 22px; font-size: clamp(38px, 4.1vw, 57px); line-height: 1.08; letter-spacing: -.035em; }
     h2 em { color: #bed4c5; }
     .intro-heading .small-note { margin-top: 30px; }
+    .book-cover { width: min(100%, 280px); height: auto; margin-top: 28px; border: 1px solid #e1b98938; box-shadow: 0 16px 40px #0005; }
     .prose p + p { margin-top: 20px; }
     .prose { color: var(--muted); font-size: 16px; }
     .prose .lead { color: var(--text); font-family: var(--serif); font-size: 25px; line-height: 1.5; }
@@ -105,7 +110,7 @@
     .specimen-data dt { font-size: 9px; letter-spacing: .14em; color: var(--copper); text-transform: uppercase; }
     .specimen-data dd { margin: 5px 0 0; font-size: 12px; color: var(--muted); }
     .author-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 100px; }
-    .author-mark { font-family: var(--serif); font-size: 80px; font-style: italic; letter-spacing: -.06em; color: #adc2b0; line-height: 1; margin-top: 30px; }
+    .author-photo { width: min(100%, 220px); height: auto; margin-top: 30px; border: 1px solid var(--line); }
     .author-copy h2 { margin: 0 0 25px; }
     .author-copy .draft-label { margin-top: 24px; }
     .newsletter { padding-block: 0; }
@@ -114,15 +119,31 @@
     .signup-card::before { content: ""; position: absolute; top: -1px; left: 54px; width: 64px; height: 2px; background: var(--copper); }
     .signup-card h2 { font-size: 40px; margin-top: 16px; }
     .signup-card .promise { color: var(--muted); font-size: 14px; margin-top: 22px; max-width: 370px; }
-    .signup-form { align-self: center; }
-    label { display: block; font-size: 12px; color: var(--text); margin-bottom: 8px; }
-    input { width: 100%; min-width: 0; border: 1px solid #46554b; border-radius: 0; background: var(--background); color: var(--text); padding: 13px 15px; font-size: 14px; }
-    input::placeholder { color: #89968d; opacity: 1; }
-    input { min-height: 49px; }
-    .signup-row { display: flex; gap: 10px; }
-    .signup-row .button { flex-shrink: 0; }
-    .form-note { margin-top: 14px; color: var(--muted); font-size: 11px; }
-    .form-status { margin-top: 16px; font-size: 12px; color: var(--copper); }
+    #mlb2-47564293 { align-self: center; box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100%; }
+    #mlb2-47564293 h4, #mlb2-47564293 p, #mlb2-47564293 span, #mlb2-47564293 button { text-transform: none; letter-spacing: normal; }
+    #mlb2-47564293 .ml-form-align-center { text-align: center; }
+    #mlb2-47564293 .ml-form-embedWrapper { background: #254124; border: 0 solid transparent; border-radius: 4px; display: inline-block; margin: 0; padding: 0; position: relative; max-width: 400px; width: 100%; }
+    #mlb2-47564293 .ml-form-embedBody, #mlb2-47564293 .ml-form-successBody { padding: 20px 20px 0; display: flow-root; }
+    #mlb2-47564293 .ml-form-embedContent, #mlb2-47564293 .ml-form-successContent { text-align: left; margin: 0 0 20px; }
+    #mlb2-47564293 h4 { color: #c6ffd2; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 400; line-height: normal; margin: 0 0 10px; text-align: left; word-break: break-word; }
+    #mlb2-47564293 p { color: #c6ffd2; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0; text-align: left; }
+    #mlb2-47564293 form { margin: 0; width: 100%; }
+    #mlb2-47564293 .ml-form-formContent { margin: 0; padding: 0 0 20px; width: 100%; float: left; }
+    #mlb2-47564293 .ml-form-horizontalRow { width: 100%; float: left; }
+    #mlb2-47564293 .ml-input-horizontal { width: 70%; float: left; }
+    #mlb2-47564293 .ml-button-horizontal { width: 30%; float: left; }
+    #mlb2-47564293 .horizontal-fields { width: 100%; float: left; padding-right: 10px; }
+    #mlb2-47564293 .ml-field-group { text-align: left; }
+    #mlb2-47564293 input[type="email"] { background: #000; color: #c6ffd2; border: 1px solid #ccc; border-radius: 4px; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin: 0; padding: 10px; width: 100%; min-width: 0; }
+    #mlb2-47564293 input::placeholder { color: #c6ffd2; opacity: 1; }
+    #mlb2-47564293 button { background: #000; border: 1px solid #000; border-radius: 4px; box-shadow: none; color: #c6ffd2; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; line-height: 20px; margin: 0; padding: 10px; width: 100%; height: auto; }
+    #mlb2-47564293 button:hover { background: #333; border-color: #333; }
+    #mlb2-47564293 .ml-mobileButton-horizontal { display: none; }
+    #mlb2-47564293 .ml-error input { border-color: red !important; }
+    #mlb2-47564293 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+    #mlb2-47564293 .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+    #mlb2-47564293 .ml-form-embedSubmitLoad::after { content: " "; display: block; width: 19px; height: 19px; margin: 1px; border-radius: 50%; border: 4px solid; border-color: #c6ffd2 #c6ffd2 #c6ffd2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+    @keyframes ml-form-embedSubmitLoad { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .site-footer { border-top: 1px solid var(--line); background: #0b0f0ef2; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-block: 30px; color: var(--muted); font-size: 11px; white-space: nowrap; }
     .footer-inner a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; text-decoration: none; }
@@ -157,7 +178,6 @@
       .intro-grid, .author-grid { gap: 50px; }
       .signup-card { padding: 36px; gap: 36px; }
       .signup-card::before { left: 36px; }
-      .signup-row { flex-direction: column; }
       .specimen-content { padding: 30px; }
       .nav-links { gap: 22px; }
       .section { width: calc(100% - 96px); }
@@ -189,14 +209,13 @@
       .specimen-panel { grid-template-columns: 1fr; }
       .specimen-art { border-right: 0; border-bottom: 1px solid var(--line); }
       .specimen-content { padding: 28px; }
-      .author-mark { font-size: 60px; margin-top: 18px; }
+      .author-photo { margin-top: 18px; }
       .author-copy h2 { font-size: 39px; }
       .newsletter { padding-block: 0; }
       .newsletter > .wrap { width: 100%; }
       .signup-card { grid-template-columns: 1fr; padding: 28px; gap: 30px; }
       .signup-card::before { left: 28px; }
       .signup-card h2 { font-size: 35px; }
-      .signup-row { flex-direction: column; }
       .footer-inner { padding-block: 24px; }
       .hero { min-height: 820px; }
       .hero .scene-image { object-position: 76% center; }
@@ -212,7 +231,11 @@
       .footer-inner { font-size: 10px; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .hero-foot { align-items: flex-start; flex-direction: column; gap: 0; }
-      .signup-row { flex-direction: column; }
+      #mlb2-47564293 .ml-form-formContent { padding-bottom: 10px; }
+      #mlb2-47564293 .ml-input-horizontal { width: 100%; }
+      #mlb2-47564293 .horizontal-fields { padding-right: 0; margin-bottom: 10px; }
+      #mlb2-47564293 .ml-button-horizontal { display: none; }
+      #mlb2-47564293 .ml-mobileButton-horizontal { display: inline-block; margin-bottom: 20px; width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -228,7 +251,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner wrap">
-      <a class="wordmark" href="#top" aria-label="Ben Noble - author of The Rebel of Machrinath, back to top">Ben Noble - author of The Rebel of Machrinath<span>Speculative Fiction</span></a>
+      <a class="wordmark" href="#top" aria-label="BDNoble Books, back to top">BDNoble Books<span>Speculative Fiction</span></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#story">The Book</a>
         <a href="#world">The World</a>
@@ -237,6 +260,9 @@
       </nav>
     </div>
   </header>
+  <aside class="announcement" id="announcement" aria-label="Announcement" hidden>
+    <p class="wrap" id="announcement-text"></p>
+  </aside>
 
   <main id="main">
     <section class="hero scene" aria-labelledby="book-title" data-parallax>
@@ -245,7 +271,8 @@
         <div class="hero-copy">
           <p class="eyebrow genre">A Debut Novel &nbsp; / &nbsp; Sci-Fi &amp; YA Fantasy</p>
           <h1 id="book-title"><span class="title-small">The Rebel of</span> <span class="title-last">Machrinath</span></h1>
-          <p class="hero-byline">By Ben Noble</p>
+           <p class="hero-byline">By Ben Noble</p>
+           <p class="release-window" data-release-text hidden></p>
           <p class="hero-pitch">On a world where living metal grows in the wild and nature is machinery, one spark changes everything.</p>
           <div class="hero-actions">
             <a class="button" href="#story">Explore the World <span aria-hidden="true">&#8599;</span></a>
@@ -269,6 +296,7 @@
           <div class="intro-heading">
             <p class="eyebrow section-label">01 &nbsp; / &nbsp; The Story</p>
             <h2 id="story-title">Not built.<br><em>Grown.</em></h2>
+            <img class="book-cover" src="cover.jpg" alt="The Rebel of Machrinath book cover, written by Ben Noble." loading="lazy" decoding="async">
             <p class="small-note"><span class="draft-label">Draft Synopsis</span><br>Based on the premise. Final story details to come.</p>
           </div>
           <!-- EDITORIAL STUB: Replace this draft with the approved book blurb. No character
@@ -377,7 +405,7 @@
       <div class="author-grid wrap">
         <div>
           <p class="eyebrow section-label">03 &nbsp; / &nbsp; The Author</p>
-          <div class="author-mark" aria-hidden="true">BN.</div>
+          <img class="author-photo" src="noble-family.jpg" alt="Ben Noble with his wife, Amy, and their three children." loading="lazy" decoding="async">
         </div>
         <div class="author-copy">
           <h2 id="author-title">Ben Noble</h2>
@@ -404,24 +432,56 @@
           <div>
             <p class="eyebrow">04 &nbsp; / &nbsp; Stay In The Know</p>
             <h2 id="updates-title">Release Day &amp;<br>Major News Alerts Only.</h2>
+            <p class="release-window" data-release-text hidden></p>
             <p class="promise">No spam, no weekly updates. Only 1-2 emails per year for book release dates and major announcements.</p>
           </div>
-          <!-- FORM SETUP: Replace REPLACE_SIGNUP_ID with your Formspree form ID,
-               then remove disabled from this form's submit button for no-JS use.
-               JS also enables it automatically when a real endpoint is configured.
-               Configure consent, double opt-in, and unsubscribe handling with your
-               mailing provider before collecting subscriber addresses. -->
-          <form class="signup-form" action="https://formspree.io/f/REPLACE_SIGNUP_ID" method="post" data-endpoint-form>
-            <input type="hidden" name="_subject" value="Machrinath release alert subscription">
-            <div hidden aria-hidden="true"><label for="signup-honey">Leave this field empty</label><input id="signup-honey" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
-            <label for="signup-email">Your email address</label>
-            <div class="signup-row">
-              <input id="signup-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required aria-describedby="signup-note signup-status">
-              <button class="button" type="submit" disabled>Notify Me <span aria-hidden="true">&#8594;</span></button>
+          <div id="mlb2-47564293" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-47564293">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>Newsletter</h4>
+                    <p id="signup-note">By subscribing, you agree to receive release and major news alerts. Unsubscribe at any time.</p>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2739567/forms/202247240039794245/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent horozintalForm">
+                      <div class="ml-form-horizontalRow">
+                        <div class="ml-input-horizontal">
+                          <div class="horizontal-fields">
+                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                              <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email" required aria-label="Email" aria-describedby="signup-note">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ml-button-horizontal primary">
+                          <button type="submit" class="primary">Subscribe</button>
+                          <button disabled style="display: none;" type="button" class="loading">
+                            <div class="ml-form-embedSubmitLoad"></div>
+                            <span class="sr-only">Loading...</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-mobileButton-horizontal">
+                      <button type="submit" class="primary">Subscribe</button>
+                      <button disabled style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none;" role="status">
+                  <div class="ml-form-successContent">
+                    <h4>Thank you!</h4>
+                    <p>You have successfully joined our subscriber list.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="form-note" id="signup-note">By subscribing, you agree to receive release and major news alerts. Unsubscribe at any time.</p>
-            <p class="form-status" id="signup-status" role="status" data-form-status>Signup is not open yet. Please check back for release alerts.</p>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -439,6 +499,29 @@
     </div>
   </footer>
 
+  <script src="site-config.js"></script>
+  <script>
+    (() => {
+      const config = window.SITE_CONFIG;
+      if (!config) return;
+
+      document.querySelectorAll('[data-release-text]').forEach(element => {
+        element.textContent = config.releaseText;
+        element.hidden = !config.releaseText.trim();
+      });
+
+      const cover = document.querySelector('.book-cover');
+      cover.src = config.bookCover.src;
+      cover.alt = config.bookCover.alt;
+      const photo = document.querySelector('.author-photo');
+      photo.src = config.familyPhoto.src;
+      photo.alt = config.familyPhoto.alt;
+
+      document.querySelector('#announcement-text').textContent = config.announcement.text;
+      document.querySelector('#announcement').hidden =
+        config.announcement.enabled !== true || !config.announcement.text.trim();
+    })();
+  </script>
   <script>
     (() => {
       'use strict';
@@ -542,25 +625,18 @@
       artworkObserver.observe(document.body);
       artworkObserver.observe(header);
 
-      document.querySelectorAll('[data-endpoint-form]').forEach(form => {
-        const button = form.querySelector('button[type="submit"]');
-        const status = form.querySelector('[data-form-status]');
-        const endpoint = form.getAttribute('action');
-        const configured = Boolean(endpoint) && !endpoint.includes('REPLACE_');
-
-        button.disabled = !configured;
-        if (configured) status.textContent = '';
-
-        form.addEventListener('submit', event => {
-          if (!configured) {
-            event.preventDefault();
-            status.textContent = 'This form is not open yet. Your information has not been sent.';
-          }
-          // A configured form submits natively to the provider, which confirms delivery.
-          // Never announce success locally before an actual submission has succeeded.
-        });
-      });
     })();
+  </script>
+  <script>
+    function ml_webform_success_47564293() {
+      var $ = window.ml_jQuery || window.jQuery;
+      $('.ml-subscribe-form-47564293 .row-success').show();
+      $('.ml-subscribe-form-47564293 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+  <script>
+    fetch('https://assets.mailerlite.com/jsonp/2739567/forms/202247240039794245/takel').catch(() => {});
   </script>
 </body>
 </html>
