@@ -17,6 +17,6 @@ window.SITE_CONFIG = {
   // Text is plain text, not HTML. An empty message stays hidden.
   announcement: {
     enabled: false,
-    text: "Test a longer announcement with a full sentence that runs over."
+    text: ""
   }
 };
