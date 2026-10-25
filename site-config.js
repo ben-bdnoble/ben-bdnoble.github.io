@@ -13,10 +13,10 @@ window.SITE_CONFIG = {
     alt: "Ben Noble with his wife, Amy, and their three children."
   },
 
-  // Set enabled to true to show your message directly below the menu.
-  // Text is plain text, not HTML. An empty message keeps the banner hidden.
+  // Set enabled to true to show a message between the title and navigation.
+  // Text is plain text, not HTML. An empty message stays hidden.
   announcement: {
-    enabled: false,
-    text: ""
+    enabled: true,
+    text: "Test a longer announcement with a full sentence that runs over."
   }
 };

@@ -23,7 +23,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height, 88px) + 12px); }
     body { margin: 0; background: var(--background); color: var(--text); font: 400 16px/1.75 var(--sans); isolation: isolate; }
     ::selection { background: #135a42; color: #fff; }
     [hidden] { display: none !important; }
@@ -46,13 +46,13 @@
     .skip-link:focus { transform: translateY(0); }
     .site-header { position: sticky; top: 0; z-index: 20; background: #0b0f0eef; border-bottom: 1px solid #e1b98933; backdrop-filter: blur(16px); }
     .header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .wordmark { text-decoration: none; font-family: var(--serif); font-size: 20px; line-height: 1.2; }
+    .wordmark { flex-shrink: 0; text-decoration: none; font-family: var(--serif); font-size: 20px; line-height: 1.2; }
     .wordmark span { display: block; margin-top: 5px; font-family: var(--sans); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links { display: flex; flex-shrink: 0; align-items: center; gap: 30px; }
     .nav-links a { padding-block: 10px; text-decoration: none; font-size: 12px; color: var(--muted); }
     .nav-links a:hover { color: var(--text); }
     .nav-links .nav-alert { border: 1px solid var(--line); padding: 9px 16px; color: var(--text); }
-    .announcement { background: #254124; color: var(--text); border-bottom: 1px solid #e1b98966; padding-block: 12px; text-align: center; font-size: 14px; line-height: 1.6; }
+    .announcement { flex: 1; min-width: 0; color: var(--copper); padding-block: 10px; text-align: center; font-size: 13px; line-height: 1.6; }
     .announcement p { white-space: pre-line; overflow-wrap: anywhere; }
     .hero { position: relative; overflow: hidden; min-height: min(850px, 90svh); display: flex; flex-direction: column; justify-content: space-between; }
     .hero-grid { display: grid; grid-template-columns: 1.18fr 1fr; gap: 72px; align-items: end; padding-block: 100px 110px; flex: 1; }
@@ -185,11 +185,12 @@
       .newsletter > .wrap { width: 100%; }
     }
     @media (max-width: 720px) {
-      html { scroll-padding-top: 125px; }
+      html { --header-height: 113px; }
       .wrap { width: calc(100% - 40px); }
-      .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; padding-block: 15px 8px; }
+      .header-inner { flex-wrap: wrap; gap: 8px 16px; padding-block: 15px 8px; }
       .wordmark { font-size: 18px; }
       .wordmark span { display: none; }
+      .announcement { flex: 1; padding-block: 0; text-align: right; }
       .nav-links { width: 100%; justify-content: space-between; gap: 10px; }
       .nav-links a { font-size: 11px; min-height: 44px; display: inline-flex; align-items: center; }
       .nav-links .nav-alert { padding: 6px 10px; }
@@ -252,6 +253,9 @@
   <header class="site-header">
     <div class="header-inner wrap">
       <a class="wordmark" href="#top" aria-label="BDNoble Books, back to top">BDNoble Books<span>Speculative Fiction</span></a>
+      <aside class="announcement" id="announcement" aria-label="Announcement" hidden>
+        <p id="announcement-text"></p>
+      </aside>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#story">The Book</a>
         <a href="#world">The World</a>
@@ -260,9 +264,6 @@
       </nav>
     </div>
   </header>
-  <aside class="announcement" id="announcement" aria-label="Announcement" hidden>
-    <p class="wrap" id="announcement-text"></p>
-  </aside>
 
   <main id="main">
     <section class="hero scene" aria-labelledby="book-title" data-parallax>
@@ -619,6 +620,7 @@
       window.addEventListener('resize', scheduleArtwork);
       motionPreference.addEventListener('change', scheduleArtwork);
       const artworkObserver = new ResizeObserver(() => {
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
         background.style.top = `${header.offsetHeight}px`;
         scheduleArtwork();
       });
