@@ -16,7 +16,7 @@ window.SITE_CONFIG = {
   // Set enabled to true to show a message between the title and navigation.
   // Text is plain text, not HTML. An empty message stays hidden.
   announcement: {
-    enabled: true,
+    enabled: false,
     text: "Test a longer announcement with a full sentence that runs over."
   }
 };
